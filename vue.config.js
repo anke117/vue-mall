@@ -1,11 +1,4 @@
-const path = require("path");
 const glob = require("glob");
-const fs = require("fs");
-const config = {
-  entry: "main.js",
-  html: "index.html",
-  pattern: ["src/pages/*"]
-};
 const entryHtml = glob.sync("./src/pages/*/*.html");
 let pages = {};
 console.log(entryHtml);
@@ -19,3 +12,6 @@ entryHtml.forEach(filePath => {
   };
 });
 console.log(pages);
+module.exports = {
+  pages: pages
+};
